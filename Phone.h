@@ -5,8 +5,9 @@ class Phone : virtual public Device
 {
 public:
 	Phone(std::string _name);
-	void make_call();
+	virtual void make_call();
 	void off();
+	virtual void what_can_i_do();
 };
 
 // Constructor
@@ -25,4 +26,11 @@ void Phone::make_call()
 void Phone::off()
 {
 	std::cout << "Hold the power button" << std::endl;
+}
+
+
+// What can do the device
+void Phone::what_can_i_do()
+{
+	std::cout << "I can make voice call and SMS\n";
 }

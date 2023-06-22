@@ -1,18 +1,19 @@
 #pragma once
 #include "Phone.h"
-#include "Camera.h"
 
-class SmartPhone : public Phone, public Camera
+class SmartPhone : public Phone
 {
 public:
 	SmartPhone(std::string _name);
 	void set_name(std::string _name);
-	int off();
+	void browse_internet();
+	void off(); // override
+	virtual void what_can_i_do();
 };
 
 
 // Constructor
-SmartPhone::SmartPhone(std::string _name) : Phone(_name), Camera(_name)
+SmartPhone::SmartPhone(std::string _name) : Phone(_name)
 {
 	std::cout << "SmartPhone created" << std::endl;
 }
@@ -24,8 +25,20 @@ void SmartPhone::set_name(std::string _name)
 }
 
 // Switch off the camera
-int SmartPhone::off()
+void SmartPhone::off()
 {
 	std::cout << "Select the off menu item" << std::endl;
-	return 0;
+}
+
+// Browse internet
+void SmartPhone::browse_internet()
+{
+	std::cout << "Open browser and enter URL" << std::endl;
+}
+
+
+// What can do the device
+void SmartPhone::what_can_i_do()
+{
+	std::cout << "I can do many cool things\n";
 }

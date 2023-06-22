@@ -10,7 +10,9 @@ public:
 	Device() : model_name("") {};
 	Device(std::string _name);
 	void who_am_i();
-	void off();
+	virtual void what_can_i_do();
+	// abstract funcs
+	virtual void off() = 0;
 };
 
 // Constructor with param
@@ -27,8 +29,8 @@ void Device::who_am_i()
 	std::cout << "I am: " << model_name << std::endl;
 }
 
-// Switch off the device
-void Device::off()
+// What can do the device
+void Device::what_can_i_do()
 {
-	std::cout << "I don't know what to do..." << std::endl;
+	std::cout << "Nothing to do - I'm just an absctact device\n";
 }
